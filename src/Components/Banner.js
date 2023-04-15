@@ -17,14 +17,13 @@ export default function Banner() {
         }
         fetchData()
     }, [])
-    console.log(movie);
 
     function truncate (string, n) {
         return string?.length > n ? string.substr(0, n-1) + '...' : string;
     }
   return (
     <div
-      className="h-[648px] object-contain text-white"
+      className="h-[448px] object-contain text-white"
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
@@ -45,7 +44,7 @@ export default function Banner() {
         </div>
         <h1 className="w-[720px] leading-[20.8px] pt-[16px] text-[12.8px] m-w-[360px] h-[80px]">
           {truncate(
-            `This is dummy description.`,
+            movie?.overview,
          150)}
         </h1>
       </div>
