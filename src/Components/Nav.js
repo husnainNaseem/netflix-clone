@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function Nav() {
+export default function Nav() {
+  const [show, setShow] = useState(false);
+  const transitionNavBar = () => {
+    if (window.scrollY >= 100) {
+      setShow(true);
+    } else {
+      setShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", transitionNavBar);
+    return () => window.removeEventListener("scroll", transitionNavBar);
+  }, []);
   return (
-    <div className="fixed -top-[0px] p-[30px] w-full h-[30px] z-0 bg-black transition-all ease-in duration-75">
+    <div
+      className={`
+        fixed -top-[0px] p-[30px] w-full h-[30px] z-1 transition-all ease-in duration-75
+        ${show ?  "bg-black" : "bg-transparent"}
+        `}
+    >
       <div className="flex justify-between">
         <img
           className="fixed top-4 -left-[0px] w-[80px] object-contain cursor-pointer pl-[20px]"
@@ -18,5 +36,3 @@ function Nav() {
     </div>
   );
 }
-
-export default Nav;

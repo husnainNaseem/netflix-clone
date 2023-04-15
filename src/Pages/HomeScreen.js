@@ -1,12 +1,13 @@
 import React from 'react'
 import Nav from '../Components/Nav'
+import Banner from '../Components/Banner'
 
-function HomeScreen() {
+export default function HomeScreen() {
   return (
     <div>
         <Nav />
+        <Banner />
+        
     </div>
   )
 }
-
-export default HomeScreen
