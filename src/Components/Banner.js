@@ -23,7 +23,7 @@ export default function Banner() {
     }
   return (
     <div
-      className="h-[448px] object-contain text-white"
+      className="h-[448px] object-cover text-white"
       style={{
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
         backgroundPosition: "center center",
