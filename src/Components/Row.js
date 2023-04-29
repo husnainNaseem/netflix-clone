@@ -15,10 +15,10 @@ export default function Row({ title, fetchUrl, isLargeRow = false }) {
     fetchData();
   }, [fetchUrl]);
   return (
-    <div className="text-white ml-[20px]">
+    <div className="text-white ml-[20px] mt-4">
       <h2>{title}</h2>
 
-      <div className="flex overflow-y-hidden overflow-x-scroll no-scrollbar p-[20px] w-full transition-transform">
+      <div className="flex overflow-y-hidden overflow-x-scroll no-scrollbar pt-[10px] w-full transition-transform">
         {movies?.map(
           (movie) =>(
             (isLargeRow && movie.poster_path) ||

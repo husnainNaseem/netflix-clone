@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import Signup from "../Components/Signup";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginScreen() {
   const [signIn, setSignIn] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <div className="relative h-screen bg-[url(https://miro.medium.com/v2/resize:fit:1400/1*5lyavS59mazOFnb55Z6znQ.png)]">
       <img
+        onClick={() => navigate("/")}
         className="fixed z-10 top-[0px] left-[15px] w-[130px] sm:top-[0px] sm:left-[20px] sm:w-[150px] lg:top[0px] lg:left-[20px] xl:top-[0px] xl:left-[100px] lg:w-[180px] object-contain cursor-pointer xl:pl-[20px]"
         src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
         alt=""
@@ -19,12 +23,14 @@ export default function LoginScreen() {
         Sign In
       </button>
       <div className="w-full h-screen backdrop-brightness-50 backdrop-sm" />
-      <div className="container w-screen absolute z-10 top-[30%] lg:left-[%] xl:left-[2%] text-[#fff] p-[20px] text-center">
-        {signIn ? (
+      {signIn ? (
+        <div className="absolute top-[15%] md:left-[28%] lg:left-[35%]">
           <Signup />
-        ) : (
-          <>
-            <h1 className="mb-[20px] text-[48px] font-[900]">
+        </div>
+      ) : (
+        <>
+          <div className="absolute z-10 top-[30%] lg:left-[8%] xl:left-[12%] text-[#fff] p-[20px] text-center">
+            <h1 className="mb-[20px] text-[48px] leading-[45px] font-[900]">
               Unlimited films, Tv programs and more.
             </h1>
             <h2 className="text-[24px] font-[400] pb-[20px]">
@@ -51,9 +57,10 @@ export default function LoginScreen() {
                 </button>
               </form>
             </div>
-          </>
-        )}
-      </div>
+          </div>
+        </>
+      )}
+      {/* </div> */}
     </div>
   );
 }

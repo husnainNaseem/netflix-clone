@@ -27,13 +27,13 @@ export default function Nav() {
       <div className="flex justify-between">
         <img
           onClick={() => navigate("/")}
-          className="fixed top-[25px] -right-[-20px] w-[30px] h-[30px] object-contain cursor-pointer"
+          className="fixed z-10 top-[-12px] left-[20px] w-[150px] object-contain cursor-pointer"
           src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
           alt=""
         />
         <img
           onClick={() => navigate("/profile")}
-          className="fixed top-[25px] -right-[-20px] w-[30px] h-[30px] object-contain cursor-pointer"
+          className="fixed top-[15px] right-[30px] w-[30px] object-contain cursor-pointer"
           src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
           alt=""
         />
